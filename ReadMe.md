@@ -1,6 +1,6 @@
 # Road to master Ansible
 
-> Ansible: open source software with following functions: provisioning, configuration management and application-deployment.
+> My way to master Ansible, an IT automation software.
 > **Simple, agentless** IT automation
 
 ## Courses
