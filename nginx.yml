@@ -1,0 +1,18 @@
+---
+- hosts: web
+  become: true
+  user: ubuntu
+  tasks:
+    - name: Add Nginx Repository
+      apt_repository: repo='ppa:nginx/stable' state=present
+      register: ppainstalled
+
+    - name: Install Nginx
+      apt: pkg=nginx state=lates update_cache=true
+      when: ppainstalled|success
+      notify:
+        - Start Nginx
+
+  handlers:
+    - name: Start Nginx
+      service: name=nginx state=started # sudo service nginx start

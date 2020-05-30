@@ -1,0 +1,2 @@
+target1 ansible_user=osboxes ansible_host=127.0.0.1 ansible_ssh_pass=osboxes.org ansible_port=2222
+target2 ansible_user=osboxes ansible_host=127.0.0.1 ansible_ssh_pass=osboxes.org ansible_port=2022
