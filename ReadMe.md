@@ -11,7 +11,7 @@
 
 [Course link](https://www.udemy.com/course/learn-ansible/)
 
-[Course textbook](udemy_ansible_absoulute_beginner.md)
+[Course textbook](/Udemy_absolute_beginners/udemy_ansible_absoulute_beginner.md)
 
 #### 2. Ansible: Installation and Basics (serversforhackers.com)
 
