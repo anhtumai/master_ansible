@@ -18,7 +18,7 @@ $> ssh osboxes@127.0.0.1 -p <Host Port>
 
 ## YAML Tutorial
 
-[YAML Learning](./YAML/yaml_tutorial.md)
+[YAML Learning](../YAML/yaml_tutorial.md)
 
 ## Ansible
 
@@ -265,8 +265,12 @@ Search for available role at [https://galaxy.ansible.com/](https://galaxy.ansibl
 
 ![Overview](2020-05-31-18-55-20.png)
 
-![Step1](2020-05-31-18-52-49.png)
+Database
 
-![Step2](2020-05-31-18-53-44.png)
+![database](2020-05-31-18-52-49.png)
+
+Server
+
+![server](2020-05-31-18-53-44.png)
 
 Instruction: [link](https://github.com/kodekloudhub/learning-app-ecommerce/tree/master)
