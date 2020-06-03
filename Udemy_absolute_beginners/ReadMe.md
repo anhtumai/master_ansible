@@ -18,7 +18,7 @@ $> ssh osboxes@127.0.0.1 -p <Host Port>
 
 ## YAML Tutorial
 
-[YAML Learning](./YAML/yaml_tutorial.md)
+[YAML Learning](../YAML/yaml_tutorial.md)
 
 ## Ansible
 
@@ -110,7 +110,7 @@ Use `when` in task.
     ansible_distribution_version == "16.04"
 
 - name: Install NGINX on Redhat
-  apt:
+  yum:
     name: nginx
     state: present
   when: ansible_os_family == "RedHat" or
@@ -152,7 +152,7 @@ Example: you want to install multiple items on remote hosts.
         required: False
 
   tasks:
-    - name: Install "{{ item.name }}" on Debina
+    - name: Install "{{ item.name }}" on Debian
       apt:
         name: "{{ item.name}}"
         state: present
@@ -265,8 +265,16 @@ Search for available role at [https://galaxy.ansible.com/](https://galaxy.ansibl
 
 ![Overview](2020-05-31-18-55-20.png)
 
-![Step1](2020-05-31-18-52-49.png)
+Database:
 
-![Step2](2020-05-31-18-53-44.png)
+![Database](2020-05-31-18-52-49.png)
+
+Server:
+
+![Server](2020-05-31-18-53-44.png)
 
 Instruction: [link](https://github.com/kodekloudhub/learning-app-ecommerce/tree/master)
+
+**Note before starting:**
+
+- `service` vs `systemd|systemctl`: service is used for old system, operates on /etc/init.d; systemctl is more modern, operates on /lib/systemd. If systemctl is avaliable, always use it. In CentOS, service redirects to systemctl.
