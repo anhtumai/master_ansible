@@ -1,3 +1,7 @@
 # Ansible Essentials
 
-## How Ansible works
+## 1. Ad-Hoc command
+
+'''ya,ö
+
+'''

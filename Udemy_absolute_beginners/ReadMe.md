@@ -273,8 +273,6 @@ Server
 
 ![Server](2020-05-31-18-53-44.png)
 
-> > > > > > > 953c6a1cf0688c8066156cd1803cd8514935601a:Udemy_absolute_beginners/udemy_ansible_absoulute_beginner.md
-
 Instruction: [link](https://github.com/kodekloudhub/learning-app-ecommerce/tree/master)
 
 **Note before starting:**
