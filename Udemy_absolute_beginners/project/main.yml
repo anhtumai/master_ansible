@@ -74,9 +74,12 @@
         remote_src: no
     - name: Import DB
       shell: mysql < /tmp/db-load-script.sql
+      ignore_errors: yes
     ## Set up Web server
     - name: Install backend code
       git:
         repo: https://github.com/kodekloudhub/learning-app-ecommerce.git
         dest: /var/www/html/
         clone: yes
+
+    - name: Change configuration of httpd.conf
