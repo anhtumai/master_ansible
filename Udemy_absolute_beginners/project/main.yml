@@ -37,7 +37,7 @@
       firewalld:
         permanent: yes
         zone: public
-        port: 3036/tcp
+        port: 3306/tcp
         state: enabled
 
     - name: Enable port on firewall
@@ -46,6 +46,10 @@
         zone: public
         port: 80/tcp
         state: enabled
+    - name: firewalld reloaded
+      systemd:
+        name: firewalld
+        state: reloaded
 
     ## Add item to the database
     - name: Make sure pymysql is present
@@ -81,5 +85,22 @@
         repo: https://github.com/kodekloudhub/learning-app-ecommerce.git
         dest: /var/www/html/
         clone: yes
+        force: true
 
-    - name: Change configuration of httpd.conf
+    - name: Change configuration of httpd.conf, index.html to index.php
+      replace:
+        path: /etc/httpd/conf/httpd.conf
+        regexp: "index.html"
+        replace: "index.php"
+
+    - name: Replace 172... to localhost in index.php
+      replace:
+        path: /var/www/html/index.php
+        regexp: "172.20.1.101"
+        replace: "localhost"
+
+    - name: Turn on httpd
+      systemd:
+        name: httpd
+        state: started
+        enabled: yes
