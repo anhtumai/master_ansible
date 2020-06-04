@@ -278,3 +278,10 @@ Instruction: [link](https://github.com/kodekloudhub/learning-app-ecommerce/tree/
 **Note before starting:**
 
 - `service` vs `systemd|systemctl`: service is used for old system, operates on /etc/init.d; systemctl is more modern, operates on /lib/systemd. If systemctl is avaliable, always use it. In CentOS, service redirects to systemctl.
+
+- For ease of VM setting up and avoiding MySQL socket error, I will set up database and server on the same machine. This is enough for practice Ansible. The main file is: [Ansible main file](./project/main.yml)
+
+```bash
+$> cd project
+$> ansible-playbook -i hosts main.yml
+```

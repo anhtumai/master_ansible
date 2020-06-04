@@ -13,13 +13,7 @@
 
 [Course textbook](/Udemy_absolute_beginners/ReadMe.md)
 
-#### 2. Ansible: Installation and Basics (serversforhackers.com)
-
-[Course link](https://serversforhackers.com/s/ansible)
-
-[Course textbooks](installation_and_basics.md)
-
-#### 3. Ansible Essentials: Simplicity in Automation
+#### 2. Ansible Essentials: Simplicity in Automation
 
 [Course link](www.redhat.com)
 

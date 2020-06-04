@@ -1,0 +1,82 @@
+---
+- hosts: application
+  become: true
+  user: osboxes
+  vars:
+    packages:
+      - name: firewalld
+      - name: mariadb-server
+      - name: git
+      - name: httpd
+      - name: php
+      - name: php-mysql
+      - name: epel-release
+      - name: python-pip
+
+    services:
+      - name: firewalld
+      - name: mariadb
+
+  tasks:
+    ## Set up database
+    - name: Install "{{ item.name }}".
+      yum:
+        name: "{{ item.name}}"
+        state: present
+      loop: "{{ packages}}"
+    - name: Turn on "{{ item.name }}" service for database
+      systemd:
+        name: "{{ item.name }}"
+        state: started
+        enabled: yes
+      loop: "{{ services }}"
+
+    ## Enable application port on firewall
+
+    - name: Enable port on firewall
+      firewalld:
+        permanent: yes
+        zone: public
+        port: 3036/tcp
+        state: enabled
+
+    - name: Enable port on firewall
+      firewalld:
+        permanent: yes
+        zone: public
+        port: 80/tcp
+        state: enabled
+
+    ## Add item to the database
+    - name: Make sure pymysql is present
+      pip:
+        name: pymysql
+        state: present
+
+    - name: Create database ecomdb
+      mysql_db:
+        name: ecomdb
+        state: present
+    - name: Create user ecomuser
+      mysql_user:
+        name: ecomuser
+        password: ecompassword
+        host: localhost
+        priv: "*.*:ALL,GRANT"
+        state: present
+    - name: Flush privileges
+      shell: mysql -e "FLUSH PRIVILEGES;"
+    ## Load product module to the database
+    - name: Copy db-load script to host
+      copy:
+        src: ./files/db-load-script.sql
+        dest: /tmp
+        remote_src: no
+    - name: Import DB
+      shell: mysql < /tmp/db-load-script.sql
+    ## Set up Web server
+    - name: Install backend code
+      git:
+        repo: https://github.com/kodekloudhub/learning-app-ecommerce.git
+        dest: /var/www/html/
+        clone: yes
