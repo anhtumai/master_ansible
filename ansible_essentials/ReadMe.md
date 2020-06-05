@@ -2,6 +2,6 @@
 
 ## 1. Ad-Hoc command
 
-'''ya,ö
+'''
 
 '''

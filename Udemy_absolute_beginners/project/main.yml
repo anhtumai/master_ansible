@@ -9,7 +9,7 @@
       - name: git
       - name: httpd
       - name: php
-      - name: php-mysql
+      - name: php-mysqldb_user
       - name: epel-release
       - name: python-pip
 
