@@ -320,5 +320,3 @@ def FilterModule(object):
 ```
 
 ### Callback Plugin example
-
-> To interact with other applications: mail, hipchat, slack, ...

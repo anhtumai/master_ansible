@@ -13,7 +13,13 @@
 
 [Course textbook](/Udemy_absolute_beginners/ReadMe.md)
 
-#### 2. Ansible Essentials: Simplicity in Automation
+#### 2. Udemy: Ansible Advanced - Hands-On - DevOps
+
+[Course link](https://www.udemy.com/course/learn-ansible-advanced/)
+
+[Course textbook](/Udemy_advanced/ReadMe.md)
+
+#### 3. Ansible Essentials: Simplicity in Automation
 
 [Course link](www.redhat.com)
 
