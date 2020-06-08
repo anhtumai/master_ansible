@@ -1,0 +1,8 @@
+- 
+    name: Generate random file name
+    hosts: machine1
+    tasks: 
+        - name: Install dependencies
+          file: 
+            path: /tmp/random_file
+            state: touch
