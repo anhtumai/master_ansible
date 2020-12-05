@@ -21,6 +21,6 @@
 
 #### 3. Ansible Essentials: Simplicity in Automation
 
-[Course link](www.redhat.com)
+[Course link](https://www.redhat.com)
 
-[Course textbook](/ansilbe_essentials/ReadMe.md)
+[Course textbook](/ansible_essentials/ReadMe.md)
